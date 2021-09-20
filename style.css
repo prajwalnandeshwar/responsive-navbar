@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: rgb(10, 56, 99);
+    overflow: hidden;
+}
+nav{
+    background-color: #00203FFF;
+    height: 8vh;
+}
+nav, .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ADEFD1FF;
+    padding: 0 50px;
+}
+.links a{
+    color: #ADEFD1FF;
+    text-decoration: none;
+    font-size: 1rem;
+}
+#logo{
+    font-size: 2.2rem;
+}
+.links{
+    list-style: none;
+    width: 40%;
+}
+.burger div{
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+    background-color:#ADEFD1FF ;
+}
+.burger{
+    display: none;
+}
+@media screen and (max-width:768px){
+    .burger{
+        display: block;
+    }
+    .links{
+        position: absolute;
+        right: 0;
+        top: 8vh;
+        height: 92vh;
+        background-color: #00203FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        transform: translateX(100%);
+    }
+    .links li {
+        opacity: 0%;
+    }
+    .nav-clicked{
+        transform: translateX(0%);
+    }
+}
+.burger-clicked #line1 {
+    transform: rotate(45deg) translateX(5px);
+}
+.burger-clicked #line2 {
+    display: none;
+}
+.burger-clicked #line3{
+    transform: rotate(-45deg) translateX(5px);
+}
+
+@keyframes linkAnimation{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 1;
+    }
+}
